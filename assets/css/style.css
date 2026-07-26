@@ -1,0 +1,160 @@
+:root{
+  --ink:#101826;
+  --paper:#F6F4EF;
+  --navy:#152743;
+  --navy-2:#1E3A63;
+  --slate:#4A5568;
+  --gold:#B8863A;
+  --gold-light:#E8D5AE;
+  --line:#D8D3C6;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{ margin:0; background:var(--paper); color:var(--ink); font-family:'Inter',sans-serif; font-size:16px; line-height:1.6; }
+h1,h2,h3,.display{ font-family:'Fraunces',serif; font-weight:600; letter-spacing:-0.01em; color:var(--navy); margin:0; }
+.eyebrow{ font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); }
+a{ color:inherit; }
+.wrap{ max-width:1120px; margin:0 auto; padding:0 32px; }
+
+/* Header & Navigation */
+header{ position:sticky; top:0; z-index:30; background:rgba(246,244,239,0.94); backdrop-filter:blur(6px); border-bottom:1px solid var(--line); }
+.nav{ display:flex; align-items:center; justify-content:space-between; padding:16px 32px; max-width:1120px; margin:0 auto; position:relative; }
+.logo{ font-family:'Fraunces',serif; font-weight:700; font-size:20px; color:var(--navy); display:flex; align-items:center; gap:8px; }
+.logo .mark{ display:inline-block; width:10px; height:10px; background:var(--gold); border-radius:2px; transform:rotate(45deg); }
+.navlinks{ display:flex; gap:26px; font-size:14px; font-weight:500; align-items:center; }
+.navlinks > div{ position:relative; }
+.navlinks a.top{ text-decoration:none; color:var(--slate); cursor:default; padding:8px 0; display:inline-block; }
+.navlinks > div:hover .dropdown{ display:block; }
+.dropdown{ display:none; position:absolute; top:100%; left:-16px; background:#fff; border:1px solid var(--line); border-radius:6px; padding:10px; min-width:240px; box-shadow:0 16px 32px -12px rgba(21,39,67,0.18); }
+.dropdown a{ display:block; text-decoration:none; color:var(--ink); font-size:13.5px; padding:8px 10px; border-radius:4px; }
+.dropdown a:hover{ background:var(--paper); color:var(--navy); }
+.dropdown a small{ display:block; color:var(--slate); font-weight:400; font-size:12px; margin-top:2px; }
+
+/* Buttons */
+.btn{ display:inline-block; padding:11px 20px; background:var(--navy); color:#fff !important; text-decoration:none; font-weight:600; font-size:13.5px; border-radius:3px; border:1px solid var(--navy); transition:background .15s ease; }
+.btn:hover{ background:var(--navy-2); }
+.btn.ghost{ background:transparent; color:var(--navy) !important; border:1px solid var(--navy); }
+.btn.ghost:hover{ background:var(--paper); }
+
+/* Hero */
+.hero{ padding:80px 0 56px; }
+.hero-grid{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:center; }
+.hero h1{ font-size:42px; line-height:1.1; margin:16px 0 18px; }
+.hero p.sub{ font-size:17.5px; color:var(--slate); max-width:48ch; margin-bottom:26px; }
+.hero-cta{ display:flex; gap:14px; align-items:center; margin-bottom:30px; }
+.trust-row{ display:flex; flex-wrap:wrap; gap:10px 22px; font-size:12.5px; color:var(--slate); font-family:'IBM Plex Mono',monospace; }
+
+/* Dial Card */
+.dial-card{ background:var(--navy); border-radius:6px; padding:34px 30px; color:#EDEFF3; }
+.dial-title{ font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#9AB0CC; margin-bottom:16px; }
+.dial-wrap{ display:flex; align-items:center; gap:20px; }
+.dial-num{ font-family:'Fraunces',serif; font-size:48px; font-weight:600; color:#fff; }
+.dial-label{ font-size:12.5px; color:#B7C4D8; margin-top:2px; }
+.dial-bars{ display:flex; flex-direction:column; gap:8px; flex:1; }
+.bar-row{ display:flex; align-items:center; gap:10px; }
+.bar-name{ font-size:12px; color:#B7C4D8; width:110px; flex-shrink:0; }
+.bar-track{ flex:1; height:6px; background:rgba(255,255,255,0.12); border-radius:3px; overflow:hidden; }
+.bar-fill{ height:100%; background:var(--gold); border-radius:3px; width:0%; transition:width 1.1s cubic-bezier(.3,.7,.2,1); }
+.dial-footnote{ font-size:12px; color:#7E90A8; margin-top:18px; border-top:1px solid rgba(255,255,255,0.12); padding-top:14px; }
+
+/* Sections */
+section{ padding:60px 0; border-top:1px solid var(--line); }
+.section-head{ max-width:60ch; margin-bottom:36px; }
+.section-head h2{ font-size:28px; margin-top:10px; }
+.section-head p{ color:var(--slate); margin-top:12px; }
+
+/* Service Grid */
+.svc-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+.svc-card{ background:var(--paper); padding:26px; }
+.svc-card .n{ font-family:'IBM Plex Mono',monospace; color:var(--gold); font-size:12.5px; margin-bottom:10px; }
+.svc-card h3{ font-size:18px; margin-bottom:9px; }
+.svc-card p{ font-size:14px; color:var(--slate); margin:0 0 12px; }
+.svc-card ul{ margin:0; padding-left:18px; font-size:13px; color:var(--slate); }
+.svc-card li{ margin-bottom:4px; }
+
+/* Engagement Grid */
+.eng-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.eng-card{ background:#fff; border:1px solid var(--line); border-radius:6px; padding:24px; }
+.eng-card .tag{ font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--gold); text-transform:uppercase; letter-spacing:.08em; }
+.eng-card h3{ font-size:17px; margin:8px 0 8px; }
+.eng-card p{ font-size:13.5px; color:var(--slate); margin:0; }
+
+/* Methodology */
+.method{ display:flex; flex-direction:column; }
+.m-row{ display:grid; grid-template-columns:60px 1fr; gap:20px; padding:20px 0; border-top:1px solid var(--line); }
+.m-row:first-child{ border-top:none; }
+.m-idx{ font-family:'Fraunces',serif; font-size:26px; -webkit-text-stroke:1.5px var(--gold); color:transparent; }
+.m-body h3{ font-size:16.5px; margin-bottom:5px; }
+.m-body p{ color:var(--slate); font-size:14px; margin:0; }
+
+/* Team Grid */
+.team-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+.team-card{ background:#fff; border:1px solid var(--line); border-radius:6px; padding:20px; }
+.team-avatar{ width:44px; height:44px; border-radius:50%; background:linear-gradient(145deg,var(--navy),var(--navy-2)); margin-bottom:14px; }
+.team-card h3{ font-size:14.5px; margin-bottom:4px; }
+.team-card .role{ font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--gold); text-transform:uppercase; letter-spacing:.05em; margin-bottom:8px; display:block; }
+.team-card p{ font-size:13px; color:var(--slate); margin:0; }
+
+/* Industries */
+.ind-row{ display:flex; flex-wrap:wrap; gap:10px; }
+.ind-pill{ border:1px solid var(--line); border-radius:20px; padding:8px 16px; font-size:13px; color:var(--navy); background:#fff; }
+
+/* Contact Card */
+.contact-card{ background:var(--navy); border-radius:6px; padding:40px; color:#EDEFF3; display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+.contact-card h2{ color:#fff; font-size:24px; }
+.contact-card p{ color:#B7C4D8; margin-top:10px; font-size:14px; }
+form{ display:flex; flex-direction:column; gap:12px; }
+input, textarea, select{ background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.18); border-radius:3px; padding:12px 14px; color:#fff; font-family:'Inter',sans-serif; font-size:14px; }
+input::placeholder, textarea::placeholder{ color:#8FA1BB; }
+textarea{ resize:vertical; min-height:70px; }
+.contact-card .btn{ background:var(--gold); border-color:var(--gold); align-self:flex-start; color:#101826 !important; }
+.contact-card .btn:hover{ background:#a3752f; }
+
+/* Pricing Table */
+.pricing-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+.pricing-card{ background:#fff; border:2px solid var(--line); border-radius:6px; padding:32px; position:relative; }
+.pricing-card.featured{ border-color:var(--gold); background:var(--paper); }
+.pricing-card.featured::before{ content:'MOST POPULAR'; position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:var(--gold); color:var(--navy); padding:4px 12px; font-size:11px; font-weight:600; border-radius:20px; }
+.pricing-label{ font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--gold); text-transform:uppercase; letter-spacing:.08em; margin-bottom:8px; }
+.pricing-title{ font-size:20px; margin-bottom:8px; }
+.pricing-desc{ color:var(--slate); font-size:14px; margin-bottom:20px; }
+.pricing-price{ font-size:28px; font-weight:700; margin-bottom:4px; }
+.pricing-per{ font-size:13px; color:var(--slate); margin-bottom:24px; }
+.pricing-features{ list-style:none; padding:0; margin:0 0 24px; }
+.pricing-features li{ padding:8px 0; font-size:13.5px; color:var(--slate); border-bottom:1px solid var(--line); }
+.pricing-features li:last-child{ border-bottom:none; }
+.pricing-card .btn{ width:100%; text-align:center; }
+
+/* Breadcrumbs */
+.breadcrumb{ padding:16px 0; font-size:13px; color:var(--slate); }
+.breadcrumb a{ color:var(--navy); text-decoration:none; }
+.breadcrumb a:hover{ text-decoration:underline; }
+
+/* Footer */
+footer{ padding:34px 0 40px; font-size:13px; color:var(--slate); }
+.foot-grid{ display:grid; grid-template-columns:1.4fr repeat(3,1fr); gap:28px; margin-bottom:28px; }
+.foot-col h4{ font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--navy); margin-bottom:12px; }
+.foot-col a{ display:block; text-decoration:none; color:var(--slate); font-size:13.5px; margin-bottom:8px; }
+.foot-col a:hover{ color:var(--navy); }
+.foot-bottom{ border-top:1px solid var(--line); padding-top:18px; display:flex; justify-content:space-between; }
+
+/* Responsive */
+@media (max-width:900px){
+  .hero-grid{ grid-template-columns:1fr; }
+  .svc-grid, .eng-grid, .team-grid, .pricing-grid{ grid-template-columns:1fr 1fr; }
+  .contact-card{ grid-template-columns:1fr; padding:26px; }
+  .foot-grid{ grid-template-columns:1fr 1fr; }
+  .hero h1{ font-size:30px; }
+  .navlinks{ display:none; }
+}
+
+@media (max-width:600px){
+  .svc-grid, .eng-grid, .team-grid, .pricing-grid{ grid-template-columns:1fr; }
+  .m-row{ grid-template-columns:1fr; }
+  .foot-grid{ grid-template-columns:1fr; }
+  .contact-card{ padding:20px; }
+  .foot-bottom{ flex-direction:column; gap:12px; }
+}
+
+:focus-visible{ outline:2px solid var(--gold); outline-offset:2px; }
+@media (prefers-reduced-motion: reduce){ .bar-fill{ transition:none; } }
